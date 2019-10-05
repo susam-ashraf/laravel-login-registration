@@ -22,6 +22,8 @@
 </head>
 <body>
 
+    @include('layouts.nav')
+
     @yield('content')
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

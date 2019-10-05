@@ -20,7 +20,7 @@ class RegistrationController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required|confirmed'
         ]);
 
 
