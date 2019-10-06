@@ -8,10 +8,14 @@ use App\User;
 
 class RegistrationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
 
     public function create()
     {
-        return view('sessions.create');
+        return view('registration.create');
     }
 
     public function store(Request $request)
@@ -22,6 +26,7 @@ class RegistrationController extends Controller
             'email' => 'required|email',
             'password' => 'required|confirmed'
         ]);
+
 
 
         $user = User::create(request(['name', 'email', 'password']));

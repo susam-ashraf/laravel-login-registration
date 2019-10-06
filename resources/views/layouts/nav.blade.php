@@ -17,13 +17,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
+                    @if (!auth()->check())
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
+                    @endif
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if(auth()->check())
-                    <li><a href="#">{{ auth()->user()->name }}</a></li>
-                    <li><a href="{{ route('logout') }}">LOGOUT</a></li>
+                        <li><a href="#">{{ auth()->user()->name }}</a></li>
+                        <li><a href="{{ route('logout') }}">LOGOUT</a></li>
                     @endif
                 </ul>
             </div><!-- /.navbar-collapse -->
