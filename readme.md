@@ -1,5 +1,5 @@
 
-## Laravel Login Register system
+## Laravel Login Registration system
 
 ## project Dependencies
 
